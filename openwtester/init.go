@@ -1,7 +1,7 @@
 package openwtester
 
 import (
-	"github.com/blocktree/digibyte-adapter/digibyte"
+	"github.com/assetsadapterstore/digibyte-adapter/digibyte"
 	"github.com/blocktree/openwallet/log"
 	"github.com/blocktree/openwallet/openw"
 )

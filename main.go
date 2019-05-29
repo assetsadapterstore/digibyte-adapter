@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/blocktree/digibyte-adapter/digibyte"
+	"github.com/assetsadapterstore/digibyte-adapter/digibyte"
 )
 
 func main() {

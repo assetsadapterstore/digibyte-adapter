@@ -44,10 +44,10 @@ func (decoder *addressDecoder) PrivateKeyToWIF(priv []byte, isTestnet bool) (str
 
 	cfg := digibyte_addrdec.DGB_mainnetPrivateWIFCompressed
 	if decoder.wm.Config.IsTestNet {
-		cfg = addressEncoder.DGB_testnetPrivateWIFCompressed
+		cfg = digibyte_addrdec.DGB_testnetPrivateWIFCompressed
 	}
 
-	wif := digibyte_addrdec.Default.AddressEncode(priv, cfg)
+	wif, _ := digibyte_addrdec.Default.AddressEncode(priv, cfg)
 
 	return wif, nil
 
@@ -77,9 +77,9 @@ func (decoder *addressDecoder) PublicKeyToAddress(pub []byte, isTestnet bool) (s
 //RedeemScriptToAddress 多重签名赎回脚本转地址
 func (decoder *addressDecoder) RedeemScriptToAddress(pubs [][]byte, required uint64, isTestnet bool) (string, error) {
 
-	cfg := digibyte_addrdec.DGB_mainnetAddressP2SH2
+	cfg := digibyte_addrdec.DGB_mainnetAddressP2SH
 	if decoder.wm.Config.IsTestNet {
-		cfg = digibyte_addrdec.DGB_testnetAddressP2SH2
+		cfg = digibyte_addrdec.DGB_testnetAddressP2SH
 	}
 
 	redeemScript := make([]byte, 0)
@@ -90,7 +90,7 @@ func (decoder *addressDecoder) RedeemScriptToAddress(pubs [][]byte, required uin
 
 	pkHash := owcrypt.Hash(redeemScript, 0, owcrypt.HASH_ALG_HASH160)
 
-	address := digibyte_addrdec.Default.AddressEncode(pkHash, cfg)
+	address, _ := digibyte_addrdec.Default.AddressEncode(pkHash, cfg)
 
 	return address, nil
 

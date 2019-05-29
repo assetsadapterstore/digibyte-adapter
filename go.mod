@@ -1,9 +1,8 @@
-module github.com/blocktree/digibyte-adapter
+module github.com/assetsadapterstore/digibyte-adapter
 
 go 1.12
 
 require (
-	github.com/assetsadapterstore/aliencoin-adapter v1.0.0
 	github.com/astaxie/beego v1.11.1
 	github.com/blocktree/bitcoin-adapter v1.2.2
 	github.com/blocktree/go-owcdrivers v1.0.14

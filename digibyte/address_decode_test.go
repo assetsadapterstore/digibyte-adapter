@@ -30,7 +30,7 @@ func TestAddressDecoder_AddressEncode(t *testing.T) {
 	t.Logf("p2pkAddr: %s", p2pkAddr)
 
 	p2sh, _ := hex.DecodeString("adf2c47cbf6a053ebf45b033ba2044c36984a468")
-	p2shAddr, _ := digibyte_addrdec.Default.AddressEncode(p2sh, digibyte_addrdec.ALC_mainnetAddressP2SH)
+	p2shAddr, _ := digibyte_addrdec.Default.AddressEncode(p2sh, digibyte_addrdec.DGB_mainnetAddressP2SH)
 	t.Logf("p2shAddr: %s", p2shAddr)
 }
 
@@ -44,7 +44,7 @@ func TestAddressDecoder_AddressDecode(t *testing.T) {
 
 	p2shAddr := "Lb5hzBamSSS4xz2FJqAV2cL2bYMq6oDjJA"
 
-	p2shHash, _ := digibyte_addrdec.Default.AddressDecode(p2shAddr, digibyte_addrdec.ALC_mainnetAddressP2SH)
+	p2shHash, _ := digibyte_addrdec.Default.AddressDecode(p2shAddr, digibyte_addrdec.DGB_mainnetAddressP2SH)
 	t.Logf("p2shHash: %s", hex.EncodeToString(p2shHash))
 }
 
