@@ -16,7 +16,6 @@
 package digibyte
 
 import (
-	"github.com/blocktree/go-owcdrivers/btcTransaction"
 	"github.com/blocktree/go-owcrypt"
 )
 
@@ -25,9 +24,4 @@ const (
 	Symbol    = "DGB"
 	CurveType = owcrypt.ECC_CURVE_SECP256K1
 	Decimals  = int32(8)
-)
-
-var (
-	MainNetAddressPrefix = btcTransaction.AddressPrefix{[]byte{0x17}, nil, "D"}
-	TestNetAddressPrefix = btcTransaction.AddressPrefix{[]byte{0x74}, nil, "D"}
 )

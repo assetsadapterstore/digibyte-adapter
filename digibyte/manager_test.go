@@ -23,6 +23,7 @@ import (
 	"time"
 
 	"github.com/astaxie/beego/config"
+	"github.com/blocktree/bitcoin-adapter/bitcoin"
 	"github.com/blocktree/openwallet/log"
 
 	"github.com/codeskyblue/go-sh"
@@ -35,11 +36,12 @@ var (
 
 func init() {
 
-	tw = testNewWalletManager()
+	testNewWalletManager()
+
 }
 
-func testNewWalletManager() *WalletManager {
-	wm := NewWalletManager()
+func testNewWalletManager() {
+	tw = NewWalletManager()
 
 	//读取配置
 	absFile := filepath.Join("conf", "conf.ini")
@@ -48,10 +50,11 @@ func testNewWalletManager() *WalletManager {
 	if err != nil {
 		panic(err)
 	}
-	wm.LoadAssetsConfig(c)
-	//wm.ExplorerClient.Debug = false
-	wm.WalletClient.Debug = true
-	return wm
+	tw.LoadAssetsConfig(c)
+
+	token := bitcoin.BasicAuth(tw.Config.RpcUser, tw.Config.RpcPassword)
+	tw.WalletClient = bitcoin.NewClient(tw.Config.ServerAPI, token, true)
+
 }
 
 func TestWalletManager(t *testing.T) {
@@ -113,7 +116,7 @@ func TestWalletManager_CreateMultiSig(t *testing.T) {
 			"DTXd1zV4cC48bFzEVWDcAgm6S1Ucu9Gamn",
 			"D6PykYU9Xd2UB9ktzZS8uzy7hUE23zxine",
 			"DLs31hhCC4xyCZ9yW7ctfouaiDdZ2EYixs",
-	})
+		})
 	if err != nil {
 		t.Errorf("CreateMultiSig failed unexpected error: %v", err)
 		return

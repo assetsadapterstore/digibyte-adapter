@@ -16,6 +16,7 @@
 package digibyte
 
 import (
+	"github.com/assetsadapterstore/digibyte-adapter/digibyte_addrdec"
 	"github.com/blocktree/bitcoin-adapter/bitcoin"
 	"github.com/blocktree/openwallet/log"
 )
@@ -32,11 +33,9 @@ func NewWalletManager() *WalletManager {
 	wm := WalletManager{}
 	wm.WalletManager = bitcoin.NewWalletManager()
 	wm.Config = bitcoin.NewConfig(Symbol, CurveType, Decimals)
-	wm.Config.MainNetAddressPrefix = MainNetAddressPrefix
-	wm.Config.TestNetAddressPrefix = TestNetAddressPrefix
+	wm.Config.MainNetAddressPrefix = digibyte_addrdec.MainNetAddressPrefix
+	wm.Config.TestNetAddressPrefix = digibyte_addrdec.TestNetAddressPrefix
 	wm.Decoder = NewAddressDecoder(&wm)
-	// wm.TxDecoder = NewTransactionDecoder(&wm)
 	wm.Log = log.NewOWLogger(wm.Symbol())
-	wm.Blockscanner.IsScanMemPool = false
 	return &wm
 }
