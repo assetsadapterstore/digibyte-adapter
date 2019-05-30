@@ -59,8 +59,8 @@ func TestSubscribeAddress(t *testing.T) {
 		endRunning = make(chan bool, 1)
 		symbol     = "DGB"
 		addrs      = map[string]string{
-			"LV9Cc8ari9qDzx3URdvb4ofZf8mThoxCZa": "sender",
-			"LLevkg1aUiECvY6Uda1bvDbqa38zykjLyR": "receiver",
+			"D8qHfnugKAgavULzVjQKyjqxMD7wBETN4s": "sender",
+			"DKzQUa2z9G1pzhhUcGzR2qJUxVzMo4vgeq": "receiver",
 		}
 	)
 
