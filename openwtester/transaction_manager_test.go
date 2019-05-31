@@ -87,7 +87,7 @@ func TestWalletManager_ExtractUTXO(t *testing.T) {
 func TestWalletManager_GetTransactionByWxID(t *testing.T) {
 	tm := testInitWalletManager()
 	wxID := openwallet.GenTransactionWxID(&openwallet.Transaction{
-		TxID: "bfa6febb33c8ddde9f7f7b4d93043956cce7e0f4e95da259a78dc9068d178fee",
+		TxID: "0a9c1d5270c71bd9b0038cabbe381f5f87c6ea7d5a2af1b359c44cef48f55b0e",
 		Coin: openwallet.Coin{
 			Symbol:     "DGB",
 			IsContract: false,
@@ -106,8 +106,8 @@ func TestWalletManager_GetTransactionByWxID(t *testing.T) {
 
 func TestWalletManager_GetAssetsAccountBalance(t *testing.T) {
 	tm := testInitWalletManager()
-	walletID := "WGVsUfTTVaCwAMRTqeJiDQsZ3vrWp9DzMA"
-	accountID := "CbnmpvJNsUjtEMRoy5Nf5FGTyfjLbke8FuKjKtEUc7fs"
+	walletID := "WMbDQUmFyJkJkkTwwgYvpRaSHkxMNimeHm"
+	accountID := "C68et8BjQ8uC1io3dBGiAzJnGMKfYeJjUxqxPNRyXqPo"
 
 	balance, err := tm.GetAssetsAccountBalance(testApp, walletID, accountID)
 	if err != nil {
@@ -169,12 +169,7 @@ func TestGetAddressBalance(t *testing.T) {
 	bs := assetsMgr.GetBlockScanner()
 
 	addrs := []string{
-		"AR5D3fGVWDz32wWCnVbwstsMW8fKtWdzNFT",
-		"AR9qbgbsmLh3ADSU9ngR22J2HpD5D9ncTCg",
-		"ARAA8AnUYa4kWwWkiZTTyztG5C6S9MFTx11",
-		"ARCUYWyLvGDTrhZ6K9jjMh9B5iRVEf3vRzs",
-		"ARGehumz77nGcfkQrPjK4WUyNevvU9NCNqQ",
-		"ARJdaB9Fo6Sk2nxBrQP2p4woWotPxjaebCv",
+		"D8qHfnugKAgavULzVjQKyjqxMD7wBETN4s",
 	}
 
 	balances, err := bs.GetBalanceByAddress(addrs...)

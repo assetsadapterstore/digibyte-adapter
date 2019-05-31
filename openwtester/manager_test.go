@@ -74,7 +74,7 @@ func TestWalletManager_CreateAssetsAccount(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WHV6NMG3niKyx4gjd6R7Q2bctz18MbN4iW"
+	walletID := "WMbDQUmFyJkJkkTwwgYvpRaSHkxMNimeHm"
 	account := &openwallet.AssetsAccount{Alias: "mainnetDGB", WalletID: walletID, Required: 1, Symbol: "DGB", IsTrust: true}
 	account, address, err := tm.CreateAssetsAccount(testApp, walletID, "12345678", account, nil)
 	if err != nil {
@@ -92,7 +92,7 @@ func TestWalletManager_GetAssetsAccountList(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WHV6NMG3niKyx4gjd6R7Q2bctz18MbN4iW"
+	walletID := "WNY4DXXMef5GCv1BKXNRCSYwYutRq924BH"
 	list, err := tm.GetAssetsAccountList(testApp, walletID, 0, 10000000)
 	if err != nil {
 		log.Error("unexpected error:", err)
@@ -128,8 +128,8 @@ func TestWalletManager_GetAddressList(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WHV6NMG3niKyx4gjd6R7Q2bctz18MbN4iW"
-	accountID := "61ryMzvKPjGt3sEC3Xvr9XP7hRyMZhsxdVtAL5BDRgXr"
+	walletID := "WNY4DXXMef5GCv1BKXNRCSYwYutRq924BH"
+	accountID := "7PFvb9pVbtAKBJP75wqgNDJD4itKAeGGFyoKeTXcCRah"
 	list, err := tm.GetAddressList(testApp, walletID, accountID, 0, -1, false)
 	if err != nil {
 		log.Error("unexpected error:", err)
