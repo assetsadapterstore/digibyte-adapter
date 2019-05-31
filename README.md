@@ -32,6 +32,7 @@ minFees = "0.00001"
 
 ### 区块浏览器
 
+https://chainz.cryptoid.info/dgb/
 https://digiexplorer.info/
 
 ### github
