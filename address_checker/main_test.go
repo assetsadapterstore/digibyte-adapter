@@ -1,4 +1,4 @@
-package digibyte_addrdec
+package main
 
 import "testing"
 
