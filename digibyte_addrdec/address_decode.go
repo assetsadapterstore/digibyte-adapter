@@ -19,8 +19,8 @@ var (
 	DGB_testnetPrivateWIFCompressed = addressEncoder.AddressType{EncodeType: "base58", Alphabet: btcAlphabet, ChecksumType: "doubleSHA256", HashType: "", HashLen: 32, Prefix: []byte{0x80}, Suffix: nil}
 	DGB_mainnetAddressP2SH          = addressEncoder.AddressType{EncodeType: "base58", Alphabet: btcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0x3f}, Suffix: nil}
 	DGB_testnetAddressP2SH          = addressEncoder.AddressType{EncodeType: "base58", Alphabet: btcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0x8c}, Suffix: nil}
-	DGB_mainnetAddressBech32V0      = addressEncoder.AddressType{"bech32", btcAlphabet, "dbg", "h160", 20, nil, nil}
-	DGB_testnetAddressBech32V0      = addressEncoder.AddressType{"bech32", btcAlphabet, "dbgt", "h160", 20, nil, nil}
+	DGB_mainnetAddressBech32V0      = addressEncoder.AddressType{"bech32", btcAlphabet, "dgb", "h160", 20, nil, nil}
+	DGB_testnetAddressBech32V0      = addressEncoder.AddressType{"bech32", btcAlphabet, "dgbt", "h160", 20, nil, nil}
 
 	Default = AddressDecoderV2{}
 )
