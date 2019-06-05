@@ -6,7 +6,8 @@ import (
 )
 
 const (
-	BtcAlphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+	BtcAlphabet    = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+	Bech32Apphabet = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
 )
 
 var (
@@ -19,8 +20,8 @@ var (
 	DGB_testnetPrivateWIFCompressed = addressEncoder.AddressType{EncodeType: "base58", Alphabet: BtcAlphabet, ChecksumType: "doubleSHA256", HashType: "", HashLen: 32, Prefix: []byte{0x80}, Suffix: nil}
 	DGB_mainnetAddressP2SH          = addressEncoder.AddressType{EncodeType: "base58", Alphabet: BtcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0x3f}, Suffix: nil}
 	DGB_testnetAddressP2SH          = addressEncoder.AddressType{EncodeType: "base58", Alphabet: BtcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0x8c}, Suffix: nil}
-	DGB_mainnetAddressBech32V0      = addressEncoder.AddressType{"bech32", BtcAlphabet, "dgb", "h160", 20, nil, nil}
-	DGB_testnetAddressBech32V0      = addressEncoder.AddressType{"bech32", BtcAlphabet, "dgbt", "h160", 20, nil, nil}
+	DGB_mainnetAddressBech32V0      = addressEncoder.AddressType{"bech32", Bech32Apphabet, "dgb", "h160", 20, nil, nil}
+	DGB_testnetAddressBech32V0      = addressEncoder.AddressType{"bech32", Bech32Apphabet, "dgbt", "h160", 20, nil, nil}
 
 	Default = AddressDecoderV2{}
 )
