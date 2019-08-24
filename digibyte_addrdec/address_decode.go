@@ -11,8 +11,8 @@ const (
 )
 
 var (
-	MainNetAddressPrefix = btcTransaction.AddressPrefix{[]byte{0x1e}, []byte{0x3f}, "dgb"}
-	TestNetAddressPrefix = btcTransaction.AddressPrefix{[]byte{0x7e}, []byte{0x8c}, "dgbt"}
+	MainNetAddressPrefix = btcTransaction.AddressPrefix{P2PKHPrefix: []byte{0x1e}, P2WPKHPrefix: []byte{0x3f}, P2SHPrefix: nil, Bech32Prefix: "dgb"}
+	TestNetAddressPrefix = btcTransaction.AddressPrefix{P2PKHPrefix: []byte{0x7e}, P2WPKHPrefix: []byte{0x8c}, P2SHPrefix: nil, Bech32Prefix: "dgbt"}
 
 	DGB_mainnetAddressP2PKH         = addressEncoder.AddressType{EncodeType: "base58", Alphabet: BtcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0x1e}, Suffix: nil}
 	DGB_testnetAddressP2PKH         = addressEncoder.AddressType{EncodeType: "base58", Alphabet: BtcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0x7e}, Suffix: nil}
